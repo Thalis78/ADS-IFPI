@@ -1,0 +1,17 @@
+------------- FILMES --------------- 
+
+    | NUMERO        : 1
+    | ID DO FILME   : 01J83KZ9K73PMPFMGSG8KQJYZM
+    | NOME DO FILME : CARROS 2
+    | IMDB          : 9
+    | GÊNERO        : INFANTIL
+    | BILHETERIA    : 100000000000000000
+    
+
+    | NUMERO        : 2
+    | ID DO FILME   : 01J83KYJ9QMDDH4E2X4WVXM536
+    | NOME DO FILME : CARROS
+    | IMDB          : 8
+    | GÊNERO        : INFANTIL
+    | BILHETERIA    : 10000000000000000
+    

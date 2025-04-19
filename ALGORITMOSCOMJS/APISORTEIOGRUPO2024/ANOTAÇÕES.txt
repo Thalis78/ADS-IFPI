@@ -1,0 +1,31 @@
+Valendo 10,0 na API para o Autor do Selecionado.
+
+Especificação:
+
+• Leia a Lista de Alunos de um Arquivo (disponibilizado)
+• Sistema deve Mostrar quanto alunos Carregador/Disponíveis para sorteio.
+• O Usuário deverá informar quantos Grupos deseja.
+• O maior grupo deverá ser o último (caso não seja divisão exata)
+• Deve ser possível excluir alunos do sorteio: Listar e pede ao usuário para indicar qual aluno desejar excluir, até digitar um flag que indica não desejar mais excluir.
+• Divisão por Sorteio - Ter a funcionalidade para sortear
+• Ter opção Exibir Grupos ordenado por nome.
+• Ter opção para gravar resultado em arquivo, ordenado por grupo e nome, do último sorteio realizado
+• Fazer sistema com Menu de Opções
+
+Entrega via Github e Vídeo demonstrando Uso (link youtube)
+
+O QUE EU PRECISO PRA FAZER ESSE PROJETO FUNCIONAR;
+ARMAZENAR UMA LISTA;
+ESSA LISTA VAI SER MANIPULADA;
+O SORTEIO VAI SER REALIZADO COM A UTILIZAÇÃO DO MATH RANDOM() * QUANTIDADE ALUNOS
+EU SÓ POSSO APAGAR ALGUEM DA LISTA SE O SORTEIO TIVER SIDO REALIZADO; APÓS O SORTEIO, VAI APARECER O MENU NOVAMENTE, PERGUNTANDO SE ELE QUER APAGAR NOVAMENTE, REALIZAR O SORTEIO NOVAMENTE OU SALVAR AS ALTERAÇÕES
+CASO O USUARIO COLOQUE UM NUMERO MAIOR QUE O DA LISTA, DIGA QUANTOS ALUNOS POSSUI DENTRO DA LISTA E PEÇA PRA ELE DIGITAR NOVAMENTE OS ALUNOS;
+CASO SALVE AS ALTERAÇÕES, MOSTRA O RESULTADO DA LISTA, COM UM LAYOUT PRÉ DEFINIDO;
+O QUE EU POSSO USAR PRA ORDENAR ESSA LISTA? ORDENAR POR ORDEM ALFABETICA; METODO SORT();
+
+
+O QUE EU VOU PRECISAR DE ENTRADA?
+- VOU PRECISAR DAS INFORMAÇÕES DA QUANTIDADE DE ALUNO E GRUPOS;
+
+O QUE MINHA SAIDA VAI MOSTRAR?
+VAI MOSTRAR UM LAYOUT COM OS GRUPOS PRÉ DEFINIDOS?

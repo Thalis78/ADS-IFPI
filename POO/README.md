@@ -30,14 +30,13 @@ Os códigos foram escritos principalmente em **Java**, com foco na aplicação p
 ## 🧪 Fontes dos Exercícios
 
 - 👨‍🏫 Aulas e desafios práticos fornecidos pela disciplina
-- 🔢 Problemas adicionais resolvidos da [Beecrowd](https://www.beecrowd.com.br/)
 - 📚 Exemplos de livros e materiais de apoio sobre Java e POO
 
 ---
 
 ## 🎓 Sobre
 
-Material de estudo desenvolvido ao longo da disciplina de **Programação Orientada a Objetos (POO)** no curso de **Análise e Desenvolvimento de Sistemas (ADS)** – IFPI 2024.1.
+Material de estudo desenvolvido ao longo da disciplina de **Programação Orientada a Objetos (POO)** no curso de **Análise e Desenvolvimento de Sistemas (ADS)** – IFPI 2024.2.
 
 Ideal para reforçar conceitos, treinar lógica e aplicar a orientação a objetos em problemas do mundo real.
 

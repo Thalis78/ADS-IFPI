@@ -40,7 +40,6 @@ Os exercícios foram baseados nas aulas do **Prof. Fábio (Curso em Vídeo)** e 
 - 🔗 [https://github.com/rogeriosilva-ifpi/ifpi-ads-2024.1-algoritmos.git](https://github.com/rogeriosilva-ifpi/ifpi-ads-2024.1-algoritmos.git)
 
 ---
-
 ## 🎓 Sobre
 
 Este material foi produzido como parte do aprendizado em **Algoritmos** no curso de **Análise e Desenvolvimento de Sistemas (ADS)**.

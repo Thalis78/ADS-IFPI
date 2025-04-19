@@ -1,7 +1,6 @@
 # 🎓 Repositório de Projetos - Curso de Análise e Desenvolvimento de Sistemas (ADS)
 
-Bem-vindo(a)! Este repositório reúne diversos projetos desenvolvidos ao longo do curso de **Análise e Desenvolvimento de Sistemas (ADS)**. Os trabalhos foram realizados nas disciplinas técnicas do curso, abrangendo áreas como programação, banco de dados, análise de sistemas, front-end, back-end, entre outros.
-
+Bem-vindo(a)! Este repositório reúne diversos projetos desenvolvidos ao longo do curso de **Análise e Desenvolvimento de Sistemas (ADS)**. 
 ## 📁 Estrutura do Repositório
 
 Cada pasta representa um projeto ou atividade desenvolvida em uma disciplina específica. Abaixo, um breve resumo do que pode ser encontrado:

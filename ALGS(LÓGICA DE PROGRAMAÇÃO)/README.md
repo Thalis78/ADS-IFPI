@@ -2,7 +2,7 @@
 
 Este repositório contém exercícios e práticas da disciplina de **Algoritmos**, com foco na lógica de programação, utilizando as linguagens **Java** e **JavaScript**.
 
-Os exercícios foram baseados nas aulas do **Prof. Fábio (Curso em Vídeo)** e também em problemas resolvidos da plataforma **Beecrowd (URI Online Judge)**.
+Os exercícios foram baseados nas aulas do **Prof. Fábio** e também em problemas resolvidos da plataforma **Beecrowd (URI Online Judge)**.
 
 ---
 

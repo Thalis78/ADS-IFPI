@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercícios DOM</title>
+  </head>
+
+  <body id="body">
+    <!-- ====================== QUESTÕES 1 A 3 ====================== -->
+    <section>
+      <h2>QUESTÕES 1 A 3</h2>
+      <div>
+        <p id="exemploId">Exemplo 1</p>
+        <p>Exemplo 2</p>
+        <p>Exemplo 3</p>
+      </div>
+
+      <button onclick="exemploComGetElementById()">Mostrar texto por ID</button>
+      <button onclick="exemploComGetElementByTagName()">
+        Mostrar quantidade de tags P
+      </button>
+      <button onclick="quantidadeParagrafo()">
+        Contar parágrafos com querySelectorAll
+      </button>
+
+      <div id="resultado"></div>
+
+      <script>
+        const resultado = document.getElementById("resultado");
+
+        const exemploComGetElementById = () => {
+          const exemploComId = document.getElementById("exemploId");
+          resultado.innerText = `RESULTADO COM ID: "${exemploComId.innerText}"`;
+        };
+
+        const exemploComGetElementByTagName = () => {
+          const exemploComTagName = document.getElementsByTagName("p");
+          resultado.innerText = `RESULTADO COM TAGNAME: Existem ${exemploComTagName.length} tags <p> na página.`;
+        };
+
+        const quantidadeParagrafo = () => {
+          const quantidadeP = document.querySelectorAll("p");
+          resultado.innerText = `QUANTIDADE DE PARÁGRAFOS (querySelectorAll): ${quantidadeP.length}`;
+        };
+      </script>
+    </section>
+
+    <!-- ====================== QUESTÃO 4 ====================== -->
+    <section>
+      <h2>QUESTÃO 4 - Alterar texto via DOM</h2>
+      <p id="paragrafo">
+        Clique no botão abaixo para alterar o texto deste parágrafo:
+      </p>
+      <button id="botao">Clique aqui</button>
+      <button id="limpar">Limpar</button>
+
+      <script>
+        const botao = document.getElementById("botao");
+        const limpar = document.getElementById("limpar");
+
+        botao.addEventListener("click", () => {
+          document.getElementById("paragrafo").textContent =
+            "O texto deste parágrafo foi alterado!";
+        });
+
+        limpar.addEventListener("click", () => {
+          document.getElementById("paragrafo").textContent = "";
+        });
+      </script>
+    </section>
+
+    <!-- ====================== QUESTÃO 5 ====================== -->
+    <!-- Explicação teórica (sem código necessário) -->
+
+    <!-- ====================== QUESTÃO 6 ====================== -->
+    <section>
+      <h2>QUESTÃO 6 - Alterar cor do texto</h2>
+      <h1 id="titulo">Texto de exemplo</h1>
+      <button onclick="mudarCor()">BLUE</button>
+      <button onclick="mudarCorPadrao()">DEFAULT COLOR</button>
+
+      <script>
+        const titulo = document.getElementById("titulo");
+
+        const mudarCor = () => {
+          titulo.style.color = "blue";
+        };
+
+        const mudarCorPadrao = () => {
+          titulo.style.color = "black";
+        };
+      </script>
+    </section>
+
+    <!-- ====================== QUESTÃO 7 ====================== -->
+    <section>
+      <h2>QUESTÃO 7 - Caixa alta</h2>
+      <form onsubmit="transformarTexto(); return false;">
+        <label for="caixa_alta">Digite um texto:</label>
+        <input type="text" id="caixa_alta" placeholder="texto simples" />
+        <button type="submit">Transformar</button>
+      </form>
+
+      <article>
+        <h3>Resultado:</h3>
+        <p id="textoEmCaixaAlta"></p>
+      </article>
+
+      <script>
+        const caixa_alta = document.getElementById("caixa_alta");
+        const textoUser = document.getElementById("textoEmCaixaAlta");
+
+        const transformarTexto = () => {
+          const texto = caixa_alta.value;
+          const textoMaiusculo = texto.toUpperCase();
+          caixa_alta.value = textoMaiusculo;
+          textoUser.innerText = textoMaiusculo;
+        };
+      </script>
+    </section>
+
+    <!-- ====================== QUESTÃO 8 ====================== -->
+    <section>
+      <h2>QUESTÃO 8 - Tema claro/escuro</h2>
+      <button onclick="mudarCorBody()" id="nomeBotao">BLACK</button>
+
+      <script>
+        let auxiliar = false;
+        const nomeBotao = document.getElementById("nomeBotao");
+        const body = document.getElementById("body");
+
+        const aplicarTema = (background, color, texto) => {
+          body.style.background = background;
+          body.style.color = color;
+          nomeBotao.innerText = texto;
+        };
+
+        const mudarCorBody = () => {
+          if (!auxiliar) {
+            aplicarTema("BLACK", "WHITE", "WHITE");
+          } else {
+            aplicarTema("WHITE", "BLACK", "BLACK");
+          }
+          auxiliar = !auxiliar;
+        };
+      </script>
+    </section>
+
+    <!-- ====================== QUESTÃO 9 ====================== -->
+    <section>
+      <h2>QUESTÃO 9 - Aumentar ou diminuir o texto</h2>
+      <button id="aumentar">Aumentar texto</button>
+      <button id="diminuir">Diminuir texto</button>
+
+      <script>
+        const paragrafos = document.querySelectorAll("p");
+        let tamanhoAtual = 16;
+        const passo = 2;
+        const max = 30;
+        const min = 10;
+
+        const aumentarTexto = () => {
+          if (tamanhoAtual + passo <= max) {
+            tamanhoAtual += passo;
+            paragrafos.forEach((p) => (p.style.fontSize = `${tamanhoAtual}px`));
+          }
+        };
+
+        const diminuirTexto = () => {
+          if (tamanhoAtual - passo >= min) {
+            tamanhoAtual -= passo;
+            paragrafos.forEach((p) => (p.style.fontSize = `${tamanhoAtual}px`));
+          }
+        };
+
+        document
+          .getElementById("aumentar")
+          .addEventListener("click", aumentarTexto);
+        document
+          .getElementById("diminuir")
+          .addEventListener("click", diminuirTexto);
+      </script>
+    </section>
+
+    <!-- ====================== QUESTÃO 10 - CALCULADORA ====================== -->
+    <section>
+      <h2>QUESTÃO 10 - Calculadora Simples</h2>
+
+      <input type="number" id="num1" placeholder="Número 1" />
+      <input type="number" id="num2" placeholder="Número 2" />
+
+      <div>
+        <label
+          ><input type="radio" name="operacao" value="soma" checked /> Soma
+          (+)</label
+        ><br />
+        <label
+          ><input type="radio" name="operacao" value="subtracao" /> Subtração
+          (−)</label
+        ><br />
+        <label
+          ><input type="radio" name="operacao" value="multiplicacao" />
+          Multiplicação (×)</label
+        ><br />
+        <label
+          ><input type="radio" name="operacao" value="divisao" /> Divisão
+          (÷)</label
+        >
+      </div>
+
+      <button onclick="calcular()">Calcular</button>
+
+      <script>
+        function calcular() {
+          const n1 = parseFloat(document.getElementById("num1").value);
+          const n2 = parseFloat(document.getElementById("num2").value);
+
+          if (isNaN(n1) || isNaN(n2)) {
+            alert("Informe dois números válidos.");
+            return;
+          }
+
+          const operacoes = document.getElementsByName("operacao");
+          let operacaoSelecionada = "";
+
+          for (let i = 0; i < operacoes.length; i++) {
+            if (operacoes[i].checked) {
+              operacaoSelecionada = operacoes[i].value;
+              break;
+            }
+          }
+
+          let total;
+
+          switch (operacaoSelecionada) {
+            case "soma":
+              total = n1 + n2;
+              break;
+            case "subtracao":
+              total = n1 - n2;
+              break;
+            case "multiplicacao":
+              total = n1 * n2;
+              break;
+            case "divisao":
+              total = n2 !== 0 ? n1 / n2 : "Erro: divisão por zero";
+              break;
+            default:
+              total = "Operação inválida";
+          }
+
+          alert(`Resultado: ${total}`);
+        }
+      </script>
+    </section>
+
+    <!-- ====================== QUESTÃO 11 ====================== -->
+    <section>
+      <h2>QUESTÃO 11 - Adicionar item em lista</h2>
+      <input type="text" id="textoLista" placeholder="Digite um item" />
+      <button onclick="adicionarNaLista()">Adicionar</button>
+      <ul id="minhaLista"></ul>
+
+      <script>
+        function adicionarNaLista() {
+          const texto = document.getElementById("textoLista").value;
+          if (texto.trim() === "") return;
+
+          const ul = document.getElementById("minhaLista");
+          const li = document.createElement("li");
+          li.textContent = texto;
+          ul.appendChild(li);
+
+          document.getElementById("textoLista").value = "";
+        }
+      </script>
+    </section>
+
+    <!-- ====================== QUESTÃO 12 ====================== -->
+    <section>
+      <h2>QUESTÃO 12 - Adicionar item em SELECT</h2>
+      <input type="text" id="textoSelect" placeholder="Digite uma opção" />
+      <button onclick="adicionarNoSelect()">Adicionar</button>
+
+      <select id="meuSelect">
+        <option disabled selected>Escolha uma opção</option>
+      </select>
+
+      <script>
+        function adicionarNoSelect() {
+          const texto = document.getElementById("textoSelect").value;
+          if (texto.trim() === "") return;
+
+          const select = document.getElementById("meuSelect");
+          const option = document.createElement("option");
+          option.textContent = texto;
+          option.value = texto;
+          select.appendChild(option);
+
+          document.getElementById("textoSelect").value = "";
+        }
+      </script>
+    </section>
+  </body>
+</html>

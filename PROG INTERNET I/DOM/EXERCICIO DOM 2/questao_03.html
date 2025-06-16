@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taxa de Engajamento</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        max-width: 400px;
+      }
+
+      label,
+      input {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .oculto {
+        display: none;
+      }
+
+      .mensagem-erro {
+        color: red;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      #resultado {
+        margin-top: 15px;
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Calcular Taxa de Engajamento</h2>
+
+    <label for="interacoes">Número de Interações:</label>
+    <input type="text" id="interacoes" placeholder="Ex: 200" />
+
+    <label for="visualizacoes">Número de Visualizações:</label>
+    <input type="text" id="visualizacoes" placeholder="Ex: 1000" />
+
+    <button onclick="calcularEngajamento()">Calcular</button>
+
+    <div id="erro" class="oculto mensagem-erro"></div>
+    <div id="resultado"></div>
+
+    <script>
+      function exibirErro(idElemento, mensagem) {
+        const elemento = document.getElementById(idElemento);
+        elemento.textContent = mensagem;
+        elemento.classList.remove("oculto");
+
+        setTimeout(() => {
+          elemento.classList.add("oculto");
+        }, 3000);
+      }
+
+      function calcularEngajamento() {
+        const interacoes = document.getElementById("interacoes").value.trim();
+        const visualizacoes = document
+          .getElementById("visualizacoes")
+          .value.trim();
+        const resultadoDiv = document.getElementById("resultado");
+
+        resultadoDiv.textContent = "";
+
+        if (interacoes === "" || visualizacoes === "") {
+          exibirErro("erro", "Preencha todos os campos!");
+          return;
+        }
+
+        const numInteracoes = parseFloat(interacoes);
+        const numVisualizacoes = parseFloat(visualizacoes);
+
+        if (
+          isNaN(numInteracoes) ||
+          isNaN(numVisualizacoes) ||
+          numVisualizacoes === 0
+        ) {
+          exibirErro("erro", "Digite valores numéricos válidos!");
+          return;
+        }
+
+        const taxa = (numInteracoes / numVisualizacoes) * 100;
+        resultadoDiv.textContent = `Taxa de Engajamento: ${taxa.toFixed(2)}%`;
+      }
+    </script>
+  </body>
+</html>

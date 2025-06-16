@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redes Sociais</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 400px;
+        margin: 20px auto;
+      }
+      div {
+        margin: 5px 0;
+      }
+      #mensagemErro {
+        color: red;
+      }
+      #redesSelecionadas {
+        margin-top: 10px;
+        color: blue;
+      }
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Redes Sociais</h3>
+
+    <div>
+      <input type="checkbox" name="redes" value="Facebook" id="fb" /><label
+        for="fb"
+        >Facebook</label
+      >
+    </div>
+    <div>
+      <input type="checkbox" name="redes" value="Twitter" id="tw" /><label
+        for="tw"
+        >Twitter</label
+      >
+    </div>
+    <div>
+      <input type="checkbox" name="redes" value="Instagram" id="ig" /><label
+        for="ig"
+        >Instagram</label
+      >
+    </div>
+    <div>
+      <input type="checkbox" name="redes" value="LinkedIn" id="li" /><label
+        for="li"
+        >LinkedIn</label
+      >
+    </div>
+    <div>
+      <input type="checkbox" name="redes" value="TikTok" id="tt" /><label
+        for="tt"
+        >TikTok</label
+      >
+    </div>
+
+    <div id="mensagemErro"></div>
+    <div id="redesSelecionadas"></div>
+    <button onclick="enviar()">Enviar</button>
+
+    <script>
+      function enviar() {
+        const checks = document.getElementsByName("redes");
+        const err = document.getElementById("mensagemErro");
+        const sel = document.getElementById("redesSelecionadas");
+
+        err.textContent = "";
+        sel.textContent = "";
+        const escolhidas = [];
+
+        for (let c of checks) {
+          if (c.checked) escolhidas.push(c.value);
+        }
+        if (escolhidas.length === 0) {
+          err.textContent = "Selecione pelo menos uma rede.";
+        } else {
+          sel.textContent = "Selecionadas: " + escolhidas.join(", ");
+        }
+      }
+    </script>
+  </body>
+</html>

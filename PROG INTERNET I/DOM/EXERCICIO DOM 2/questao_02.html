@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validação de Campo</title>
+    <style>
+      .oculto {
+        display: none;
+      }
+
+      .mensagem-erro {
+        color: red;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      button {
+        margin-top: 10px;
+        display: block;
+      }
+
+      #conteudo {
+        margin-top: 10px;
+        font-size: 1.1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="caixaDeTexto">Digite o texto:</label>
+    <input type="text" id="caixaDeTexto" />
+    <button id="botaoExibir">Exibir</button>
+
+    <div id="erroNome" class="oculto mensagem-erro"></div>
+    <div id="conteudo"></div>
+
+    <script>
+      function exibirErro(idElemento, mensagem) {
+        const elemento = document.getElementById(idElemento);
+
+        if (!elemento) {
+          console.error(`Elemento com id "${idElemento}" não encontrado.`);
+          return;
+        }
+
+        elemento.textContent = mensagem;
+        elemento.classList.remove("oculto");
+
+        setTimeout(() => {
+          elemento.classList.add("oculto");
+        }, 3000);
+      }
+
+      document
+        .getElementById("botaoExibir")
+        .addEventListener("click", function () {
+          const inputTexto = document
+            .getElementById("caixaDeTexto")
+            .value.trim();
+
+          if (inputTexto === "") {
+            exibirErro("erroNome", "O campo não pode estar vazio!");
+            document.getElementById("conteudo").innerHTML = "";
+            return;
+          }
+
+          document.getElementById("conteudo").innerHTML = inputTexto;
+        });
+    </script>
+  </body>
+</html>

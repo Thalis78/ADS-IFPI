@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carregamento de Imagem via Select</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        max-width: 500px;
+      }
+      select {
+        margin-top: 10px;
+        padding: 5px;
+        font-size: 16px;
+      }
+      #imagemSelecionada {
+        margin-top: 20px;
+        max-width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 5px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Selecione uma imagem</h2>
+
+    <select id="selectImagens">
+      <option value="">-- Escolha uma imagem --</option>
+      <option
+        value="https://www.petz.com.br/blog/wp-content/uploads/2019/03/cachorro-mini-pet-1280x720.jpg"
+      >
+        Imagem 1 (Cachorro)
+      </option>
+      <option
+        value="https://purina.com.br/sites/default/files/2024-08/queda-de-pelo-em-cachorros-br.jpg"
+      >
+        Imagem 2 (Cachorro)
+      </option>
+      <option
+        value="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRYsTCZAfCg8v3AWG5JJy68Nge5gIUdaQNl7bZ81RHjOKEqQ2sDGVpCYrAj-aFvjJdMor8MlmPYDXYwwsAvfKa6gw"
+      >
+        Imagem 3 (Cachorro)
+      </option>
+    </select>
+
+    <div id="resultado">
+      <img
+        id="imagemSelecionada"
+        src=""
+        alt="Imagem selecionada"
+        style="display: none"
+      />
+    </div>
+
+    <script>
+      const select = document.getElementById("selectImagens");
+      const imagem = document.getElementById("imagemSelecionada");
+
+      select.addEventListener("change", function () {
+        const url = this.value;
+
+        if (url) {
+          imagem.src = url;
+          imagem.style.display = "block";
+        } else {
+          imagem.src = "";
+          imagem.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

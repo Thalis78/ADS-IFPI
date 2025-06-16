@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adicionar e Remover Hashtags</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 400px;
+        margin: 20px auto;
+      }
+      input,
+      button,
+      select {
+        margin-top: 10px;
+        width: 100%;
+        padding: 6px;
+        font-size: 16px;
+      }
+      select {
+        height: 130px;
+      }
+      #msgErro {
+        color: red;
+        margin-top: 8px;
+        font-weight: bold;
+        min-height: 20px;
+      }
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hashtags Populares</h2>
+
+    <input type="text" id="inputHashtag" placeholder="#digiteAqui" />
+    <button onclick="adicionarHashtag()">Adicionar</button>
+    <button onclick="removerSelecionada()">Remover Selecionada</button>
+
+    <select id="listaHashtags" size="5"></select>
+
+    <div id="msgErro"></div>
+
+    <script>
+      function adicionarHashtag() {
+        const input = document.getElementById("inputHashtag");
+        const valor = input.value.trim();
+        const select = document.getElementById("listaHashtags");
+        const msgErro = document.getElementById("msgErro");
+        msgErro.textContent = "";
+
+        if (valor === "") {
+          msgErro.textContent = "Hashtag não pode ser vazia.";
+          return;
+        }
+        if (valor.length < 2) {
+          msgErro.textContent = "Hashtag deve ter pelo menos 2 caracteres.";
+          return;
+        }
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.toLowerCase() === valor.toLowerCase()) {
+            msgErro.textContent = "Hashtag já adicionada.";
+            return;
+          }
+        }
+        if (select.options.length >= 5) {
+          msgErro.textContent = "Limite máximo de 5 hashtags atingido.";
+          return;
+        }
+
+        const option = document.createElement("option");
+        option.value = valor;
+        option.textContent = valor;
+        select.appendChild(option);
+
+        input.value = "";
+        input.focus();
+      }
+
+      function removerSelecionada() {
+        const select = document.getElementById("listaHashtags");
+        const msgErro = document.getElementById("msgErro");
+        msgErro.textContent = "";
+
+        if (select.selectedOptions.length === 0) {
+          msgErro.textContent = "Selecione uma hashtag para remover.";
+          return;
+        }
+
+        for (let i = select.selectedOptions.length - 1; i >= 0; i--) {
+          const option = select.selectedOptions[i];
+          select.removeChild(option);
+        }
+      }
+    </script>
+  </body>
+</html>

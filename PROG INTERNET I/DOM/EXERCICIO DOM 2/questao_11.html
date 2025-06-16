@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mover Ativos Financeiros entre Carteiras - Q11</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        max-width: 700px;
+        margin: 20px auto;
+      }
+      h1 {
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      select {
+        width: 250px;
+        height: 250px;
+      }
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      button {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      button:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Mover Ativos Financeiros entre Carteiras</h1>
+    <div class="container">
+      <div>
+        <label for="ativosDisponiveis">Ativos Disponíveis:</label>
+        <select id="ativosDisponiveis" size="10" multiple>
+          <option value="AAPL">Apple (AAPL)</option>
+          <option value="GOOGL">Google (GOOGL)</option>
+          <option value="AMZN">Amazon (AMZN)</option>
+          <option value="MSFT">Microsoft (MSFT)</option>
+          <option value="TSLA">Tesla (TSLA)</option>
+          <option value="BRK.B">Berkshire Hathaway (BRK.B)</option>
+          <option value="FB">Meta (FB)</option>
+          <option value="V">Visa (V)</option>
+          <option value="JNJ">Johnson & Johnson (JNJ)</option>
+          <option value="WMT">Walmart (WMT)</option>
+        </select>
+      </div>
+
+      <div class="buttons">
+        <button id="moverParaDireitaBtn" title="Mover para a Carteira">
+          →
+        </button>
+        <button id="moverParaEsquerdaBtn" title="Mover para Ativos Disponíveis">
+          ←
+        </button>
+      </div>
+
+      <div>
+        <label for="carteiraInvestimentos">Carteira de Investimentos:</label>
+        <select id="carteiraInvestimentos" size="10" multiple></select>
+      </div>
+    </div>
+
+    <script>
+      const btnDireita = document.getElementById("moverParaDireitaBtn");
+      const btnEsquerda = document.getElementById("moverParaEsquerdaBtn");
+      const ativosDisp = document.getElementById("ativosDisponiveis");
+      const carteira = document.getElementById("carteiraInvestimentos");
+      const MAX_CARTEIRA = 10;
+
+      function moverSelecionados(origem, destino) {
+        if (origem.selectedOptions.length === 0) {
+          alert("Selecione pelo menos um ativo para mover.");
+          return;
+        }
+
+        if (destino === carteira) {
+          if (
+            carteira.options.length + origem.selectedOptions.length >
+            MAX_CARTEIRA
+          ) {
+            alert(`Carteira pode ter no máximo ${MAX_CARTEIRA} ativos.`);
+            return;
+          }
+        }
+
+        for (let i = origem.options.length - 1; i >= 0; i--) {
+          const option = origem.options[i];
+          if (option.selected) {
+            destino.appendChild(option);
+          }
+        }
+        atualizarBotoes();
+      }
+
+      function atualizarBotoes() {
+        btnDireita.disabled =
+          ativosDisp.options.length === 0 ||
+          carteira.options.length >= MAX_CARTEIRA;
+        btnEsquerda.disabled = carteira.options.length === 0;
+      }
+
+      btnDireita.addEventListener("click", () =>
+        moverSelecionados(ativosDisp, carteira)
+      );
+      btnEsquerda.addEventListener("click", () =>
+        moverSelecionados(carteira, ativosDisp)
+      );
+
+      atualizarBotoes();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload de Imagem</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+        max-width: 500px;
+      }
+
+      input,
+      button {
+        margin-top: 10px;
+        display: block;
+      }
+
+      #resultado img {
+        margin-top: 15px;
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Upload de Imagem</h2>
+
+    <input type="file" id="uploadImagem" accept="image/*" />
+    <button onclick="carregarImagem()">Carregar Imagem</button>
+
+    <div id="resultado"></div>
+
+    <script>
+      function carregarImagem() {
+        const input = document.getElementById("uploadImagem");
+        const resultado = document.getElementById("resultado");
+
+        resultado.innerHTML = "";
+
+        const arquivoSelecionado = input.files[0];
+
+        if (!arquivoSelecionado) {
+          alert("Selecione uma imagem.");
+          return;
+        }
+
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(arquivoSelecionado);
+        resultado.appendChild(img);
+      }
+    </script>
+  </body>
+</html>

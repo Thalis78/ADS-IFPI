@@ -14,12 +14,14 @@ Cada pasta representa um projeto ou atividade desenvolvida em uma disciplina esp
 - Desenvolvimento Web
 - Estrutura de Dados
 - Desenvolvimento Web
+- Engenharia de Software (EG)
+
 
 ## 🛠 Tecnologias Utilizadas ao Longo do Curso
 
 - Linguagens: Java, JavaScript, C#,C++
-- Ferramentas: Git, GitHub, Figma, Postman, Docker
-- Front-end: HTML, CSS, Bootstrap
+- Ferramentas: Git, GitHub, Figma, Postman, UML
+- Front-end: HTML, CSS, JavaScript
 
 ## 👨‍🏫 Objetivo
 

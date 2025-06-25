@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Explorador de APIs Públicas</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <h1>Explorador de APIs Públicas</h1>
+
+    <div class="api-container">
+        <div class="api-card">
+            <h2>SpaceX</h2>
+            <p>Último lançamento da SpaceX.</p>
+            <button onclick="getSpaceX()">Buscar</button>
+            <pre id="spacex-result"></pre>
+        </div>
+
+        <div class="api-card">
+            <h2>PokéAPI</h2>
+            <p>Informe o nome de um Pokémon:</p>
+            <input type="text" id="pokemon-name" placeholder="Ex: pikachu" />
+            <button onclick="getPokemon()">Buscar</button>
+            <pre id="poke-result"></pre>
+        </div>
+
+        <div class="api-card">
+            <h2>NASA APOD</h2>
+            <p>Imagem astronômica do dia.</p>
+            <button onclick="getNASA()">Buscar</button>
+            <pre id="nasa-result"></pre>
+        </div>
+
+        <div class="api-card">
+            <h2>Agify</h2>
+            <p>Informe um nome para estimar a idade:</p>
+            <input type="text" id="agify-name" placeholder="Ex: maria" />
+            <button onclick="getAgify()">Buscar</button>
+            <pre id="agify-result"></pre>
+        </div>
+    </div>
+
+    <script src="./script.js">
+    </script>
+</body>
+
+</html>

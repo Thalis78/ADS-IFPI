@@ -18,7 +18,7 @@ https://api.spacexdata.com/v4/launches/latest
 ### pokéAPI
 
 - **Descrição:** Fornece informações completas sobre Pokémon (como tipos, habilidades e evoluções).
-- **_Autenticação: _**Não precisa de chave.
+- **Autenticação:**Não precisa de chave.
 - **Exemplo (curl):**
 
 ```

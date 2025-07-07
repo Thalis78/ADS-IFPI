@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Blog da Turma</title>
+    <link href="estilos.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header id="header">
+      <h1>blog da turma</h1>
+    </header>
+    <div id="div-pai">
+      <div class="elemento-filho">
+        <nav class="style-a-generic">
+          <h3>Seções</h3>
+          <ul>
+            <li><a href="#box-model">Box Model</a></li>
+            <li><a href="#campos-modernos">Campos Modernos</a></li>
+            <li><a href="#forms">Formulários de Busca</a></li>
+            <li><a href="#tables">Tabelas</a></li>
+            <li><a href="#list">Listas</a></li>
+            <li><a href="#space">Espaçamentos</a></li>
+            <li><a href="#fonts">Fontes</a></li>
+            <li><a href="#color">Cores</a></li>
+            <li><a href="#simbolos">Símbolos</a></li>
+            <li><a href="#sobre">Sobre o IFPI</a></li>
+          </ul>
+        </nav>
+      </div>
+      <main id="main" class="elemento-filho">
+        <article class="article-generic">
+          <div class="container-generic" id="box-model">
+            <h2>Box model</h2>
+            <p style="background-color: #00ff00">Preenchimento</p>
+            <p style="border: 1px solid #000000">Bordas 1</p>
+            <p
+              style="
+                border-top: 2px dotted green;
+                border-bottom: 2px dotted green;
+                border-left: 2px dotted blue;
+                border-right: 2px dotted blue;
+              "
+            >
+              Bordas 2
+            </p>
+            <p
+              style="
+                padding: 10px 0px 10px 10px;
+                margin: 10px 10px 10px 10px;
+                border: 3px solid #000000;
+                text-align: center;
+              "
+            >
+              Margem interna e externa
+            </p>
+            <p style="width: 50%; background-color: cyan">comprimento</p>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="campos-modernos">
+          <h2>Campos modernos</h2>
+          <div class="container-generic">
+            <form>
+              <label>E-Mail:</label>
+              <input type="email" required />
+              <br />
+              <label>Data:</label>
+              <input type="date" required />
+              <br />
+              <label>Cor:</label>
+              <input type="color" required />
+              <br />
+              <label>Idade:</label>
+              <input type="number" min="0" max="130" required />
+              <br />
+              <label>Nota:</label>
+              <input type="range" min="0" max="10" required value="5" />
+              <span></span>
+              <br />
+              <input type="submit" value="Enviar" />
+            </form>
+            <script>
+              function atualizaNota() {
+                let nota = document.querySelector("input[type='range']").value;
+                document.querySelector("span").innerText = nota;
+              }
+              document
+                .querySelector("input[type='range']")
+                .addEventListener("change", atualizaNota);
+              atualizaNota();
+            </script>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="forms">
+          <h2>Formulários</h2>
+          <div class="container-generic">
+            <p>Busca no google</p>
+            <form action="http://www.google.com/search" method="get">
+              <input type="text" placeholder="Digite sua pesquisa" name="q" />
+              <input type="submit" value="Pesquisar" />
+            </form>
+
+            <p>Pesquisa no Mercado Livre</p>
+            <form action="https://www.mercadolivre.com.br/jm/search">
+              <input
+                type="text"
+                placeholder="Digite sua pesquisa"
+                name="as_word"
+              />
+              <input type="submit" value="Pesquisar" />
+            </form>
+
+            <p>Pesquisa no Amazon</p>
+            <form action="https://www.amazon.com/s">
+              <input
+                type="text"
+                placeholder="Digite sua pesquisa"
+                name="field-keywords"
+              />
+              <select name="url">
+                <option value="search-alias=toys">Brinquedos</option>
+                <option value="search-alias=dvd">Filmes</option>
+                <option value="search-alias=stripbooks-intl-ship">
+                  Livros
+                </option>
+              </select>
+              <input type="submit" value="Pesquisar" />
+            </form>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="tables">
+          <h2>Tabelas</h2>
+          <div class="container-generic">
+            <p>
+              Abaixo uma tabela 5 linhas e com as colunas numeração, produto,
+              quantidade, e uma linha de totalização utilizando o atributo
+              colspan
+            </p>
+            <table>
+              <tr>
+                <th>Numeração</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Arroz</td>
+                <td>2kg</td>
+                <td>R$ 10,00</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Feijão</td>
+                <td>1kg</td>
+                <td>R$ 5,00</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Macarrão</td>
+                <td>500g</td>
+                <td>R$ 3,00</td>
+              </tr>
+              <tr>
+                <td colspan="3">Total</td>
+                <td>R$ 18,00</td>
+              </tr>
+            </table>
+            <p>
+              Abaixo uma tabela com colunas numeração, produto, quantidade e
+              preço
+            </p>
+            <table>
+              <tr>
+                <th>Numeração</th>
+                <th>Produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Arroz</td>
+                <td>2kg</td>
+                <td>R$ 10,00</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Feijão</td>
+                <td>1kg</td>
+                <td>R$ 5,00</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Macarrão</td>
+                <td>500g</td>
+                <td>R$ 3,00</td>
+              </tr>
+            </table>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="list">
+          <h2>Lista de links</h2>
+
+          <div class="container-generic">
+            <ul>
+              <li><a href="http://www.google.com">Google</a></li>
+              <li><a href="http://www.ifpi.edu.br" target="_blank">IFPI</a></li>
+              <li>
+                <a href="imagens/perfil.jpg" target="_blank">
+                  <img src="imagens/perfil_thumb.png" alt="Imagem de perfil" />
+                </a>
+              </li>
+              <li><a href="#">Fim da página</a></li>
+            </ul>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="space">
+          <h2>Listas</h2>
+          <div class="container-generic">
+            <p><strong>Lista não ordenadas de compras</strong></p>
+            <ul>
+              <li>Arroz</li>
+              <li>Feijão</li>
+              <li>Macarrão</li>
+              <li>Carne</li>
+              <li>Frango</li>
+            </ul>
+
+            <p><strong>Lista ordenada de prioridades</strong></p>
+            <ol>
+              <li>Estudar</li>
+              <li>Trabalhar</li>
+              <li>Descansar</li>
+              <li>Comer</li>
+              <li>Estudar mais</li>
+            </ol>
+
+            <p><strong>Lista de compras com subitens</strong></p>
+            <ul>
+              <li>
+                Arroz
+                <ul>
+                  <li>Arroz integral</li>
+                  <li>Arroz parbolizado</li>
+                  <li>Arroz agulhinha</li>
+                </ul>
+              </li>
+              <li>Feijão</li>
+              <li>
+                Macarrão
+                <ul>
+                  <li>Espaguete</li>
+                  <li>Fusilli</li>
+                  <li>Parafuso</li>
+                </ul>
+              </li>
+              <li>
+                Carne
+                <ul>
+                  <li>Carne de sol</li>
+                  <li>Carne moída</li>
+                  <li>Carne de porco</li>
+                </ul>
+              </li>
+              <li>
+                Frango
+                <ul>
+                  <li>Peito de frango</li>
+                  <li>Sobrecoxa</li>
+                  <li>Asa de frango</li>
+                </ul>
+              </li>
+            </ul>
+
+            <p><strong>Lista de definições de siglas de computação</strong></p>
+            <dl>
+              <dt>HTML</dt>
+              <dd>Hyper Text Markup Language</dd>
+              <dt>CSS</dt>
+              <dd>Cascading Style Sheets</dd>
+              <dt>JS</dt>
+              <dd>JavaScript</dd>
+              <dt>PHP</dt>
+              <dd>Hypertext Preprocessor</dd>
+            </dl>
+
+            <p><strong>Lista não ordenada usando imagens</strong></p>
+            <ul style="list-style: none">
+              <li>item 1</li>
+              <li>item 2</li>
+              <li>item 3</li>
+              <li>item 4</li>
+            </ul>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="alinhamento">
+          <h2>Alinhamentos</h2>
+          <div class="container-generic">
+            <p style="text-align: justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
+              voluptatem assumenda officiis error ipsa corporis at voluptatibus
+              nemo harum, repellat laborum, dolorum exercitationem eligendi
+              perspiciatis, vitae maxime repudiandae cumque labore?
+            </p>
+            <p style="text-align: right">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Omnis
+              nesciunt, incidunt soluta unde aperiam voluptatum molestiae
+              explicabo dolorem, doloribus fugit molestias officia dolores quis
+              mollitia quam sit obcaecati delectus eum!
+            </p>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="fonts">
+          <h2>Fontes</h2>
+          <div class="container-generic">
+            <p style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+              Lorem Ipsum - Verdana
+            </p>
+            <p style="font-family: monospace, 'Courier New, Courier'">
+              Lorem Ipsum - Monospace 123
+            </p>
+            <p style="font-family: monospace, 'Courier New, Courier'">
+              Lorem Ipsum - Monospace QQQ
+            </p>
+            <p
+              style="
+                font-family: Calibri, 'Gill Sans', 'Gill Sans MT',
+                  'Trebuchet MS', sans-serif;
+              "
+            >
+              Lorem Ipsum - Calibri
+            </p>
+            <p style="font-family: 'Dancing Script', cursive">
+              Lorem Ipsum - Dancing
+            </p>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic">
+          <h2>Negrito, itálico etc...</h2>
+          <div class="container-generic">
+            <p><strong>Negrito</strong></p>
+            <p><em>Itálico</em></p>
+            <p><u>sublinhado</u></p>
+            <p><s>Tachado</s></p>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="color">
+          <div class="container-generic">
+            <h2>Estudando sobre cores</h2>
+            <p style="color: #ff0000">Vermelha</p>
+            <p style="color: #0000ff">Azul</p>
+            <p style="color: #00ff00">Verde de novo em um h6</p>
+            <h6 style="color: #00ff00">Verde</h6>
+            <p style="color: #000000">Preta</p>
+            <p style="color: #ffffff">Branca</p>
+            <p style="color: #666666">Tom de cinza claro</p>
+            <p style="color: #aaaaaa">Tom de cinza escuro</p>
+            <p style="color: #ffa500">Laranja</p>
+            <p style="color: #ffc0cb">Rosa</p>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="simbolos">
+          <h2>Aprendendo sobre símbolos e emojis</h2>
+          <div class="container-generic">
+            <p>A primeira tag de uma página é a tag é a &lt;html&gt;</p>
+            <p>Copyright: &copy;</p>
+            <p>Euro: &euro;</p>
+            <p>Iene japonês: &yen;</p>
+            <p>Ômega: &Omega;</p>
+            <p>Smiley: &#128516; &#128564;</p>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+
+        <article class="article-generic" id="sobre">
+          <h2>Sobre o IFPI</h2>
+          <div class="container-generic">
+            <p>O Instituto Federal do Piauí é a nossa instuição de ensino</p>
+            <p>
+              Seguem abaixo o link para a página e logo abaixo a sua logomarca:
+            </p>
+            <p><a href="http://www.ifpi.edu.br">Página do IFPI</a></p>
+            <img
+              src="https://www.ifpi.edu.br/topo_ifpi.png"
+              alt="Logomarca do IFPI"
+            />
+            <p>08/04/2025 - por Ely Miranda</p>
+          </div>
+        </article>
+
+        <article class="article-generic">
+          <h2>Minha primeira postagem</h2>
+          <div class="container-generic">
+            <p>Hello, world!</p>
+            <p>08/04/2025 - por Ely Miranda <a href="#" class="home">↑</a></p>
+          </div>
+        </article>
+      </main>
+
+      <aside class="elemento-filho style-a-generic">
+        <h3>Links</h3>
+        <ul>
+          <li>
+            <a
+              href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"
+              target="_blank"
+              >HTML no MDN</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"
+              target="_blank"
+              >CSS no MDN</a
+            >
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/html/" target="_blank"
+              >Tutorial HTML - W3Schools</a
+            >
+          </li>
+          <li>
+            <a href="https://www.w3schools.com/css/" target="_blank"
+              >Tutorial CSS - W3Schools</a
+            >
+          </li>
+          <li>
+            <a href="https://web.dev/" target="_blank">Boas práticas Web.dev</a>
+          </li>
+          <li>
+            <a href="https://css-tricks.com/snippets/css/" target="_blank"
+              >CSS Tricks (snippets)</a
+            >
+          </li>
+          <li><a href="https://caniuse.com/" target="_blank">Can I use?</a></li>
+        </ul>
+      </aside>
+    </div>
+    <footer id="footer">
+      <p>
+        Desenvolvido por <strong>Thalisson Moura</strong> e
+        <strong>Lincoln Matheus</strong><br />
+        ©2025. Todos os direitos Reservados
+      </p>
+    </footer>
+  </body>
+</html>

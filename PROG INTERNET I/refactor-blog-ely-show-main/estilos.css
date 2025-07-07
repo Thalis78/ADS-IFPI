@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "National Park", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+#header,
+#footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+#header h1,
+#footer strong {
+  color: #3498db;
+}
+
+#footer a {
+  color: white;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  color: #333;
+  line-height: 1.6;
+}
+
+#main h2 {
+  text-align: center;
+}
+
+.article-generic {
+  padding: 25px;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  border-left: 6px solid black;
+  border-right: 6px solid black;
+  border-radius: 8px;
+  text-align: justify;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-generic:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.article-generic img {
+  display: block;
+  margin: 30px auto 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+table {
+  width: 60%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+}
+
+td {
+  font-weight: bold;
+}
+
+#div-pai {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.elemento-filho {
+  display: flex;
+  flex-direction: column;
+  border-top: 10px solid #3498db;
+  border-bottom: 10px solid #3498db;
+  border-radius: 20px;
+  text-align: center;
+  width: 20%;
+  margin: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.elemento-filho:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.elemento-filho a {
+  padding: 10px;
+  display: block;
+  color: #3498db;
+}
+
+nav a,
+aside a {
+  color: #3498db;
+}
+.container-generic {
+  background-color: #f7f7f7;
+  color: #222;
+  padding: 24px;
+  border-radius: 10px;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.container-generic a.home {
+  margin: auto;
+  text-align: center;
+  width: 10%;
+  display: block;
+  margin-top: 20px;
+  padding: 8px 14px;
+  background-color: #e0e0e0;
+  color: #222;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.container-generic a.home:hover {
+  background-color: #cfcfcf;
+}
+
+.container-generic ul {
+  list-style: square;
+  padding-left: 0;
+  margin-left: 20px;
+}
+
+.container-generic ul ul {
+  list-style-type: circle;
+}
+
+.container-generic ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.container-generic ul li:last-child {
+  border-bottom: none;
+}
+
+.container-generic ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.container-generic ul li a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.container-generic ol {
+  list-style-type: upper-roman;
+  padding-left: 20px;
+}
+
+.container-generic dl {
+  margin-top: 16px;
+}
+
+.container-generic dt {
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.container-generic dd {
+  margin-left: 20px;
+  margin-bottom: 8px;
+}
+
+.container-generic table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.container-generic th,
+.container-generic td {
+  border: 1px solid #aaa;
+  padding: 10px;
+  text-align: center;
+}
+
+.container-generic th {
+  background-color: #3498db;
+}
+
+.container-generic input,
+.container-generic select,
+.container-generic textarea,
+.container-generic button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container-generic input[type="checkbox"],
+.container-generic input[type="radio"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+.container-generic input[type="submit"] {
+  margin: auto;
+  margin-bottom: 40px;
+  width: 40%;
+}
+
+.container-generic input[type="color"] {
+  width: 30%;
+  height: 50px;
+}
+
+.container-generic label {
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.container-generic form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.container-generic button,
+.container-generic input[type="submit"] {
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container-generic button:hover,
+.container-generic input[type="submit"]:hover {
+  background-color: #000;
+}
+
+.style-a-generic li {
+  padding: 5px 8px;
+  margin: 8px 0;
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 12px;
+  list-style: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  :hover {
+    color: white;
+  }
+}
+
+.style-a-generic li:hover {
+  background-color: #3498db;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  #main {
+    width: 80%;
+    padding: 15px;
+  }
+
+  table {
+    width: 80%;
+  }
+
+  #div-pai {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .elemento-filho {
+    width: 60%;
+    margin: 10px 0;
+  }
+
+  #header,
+  #footer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #main {
+    width: 90%;
+    padding: 10px;
+  }
+
+  table {
+    width: 90%;
+  }
+
+  .elemento-filho {
+    width: 80%;
+    margin: 8px 0;
+  }
+}

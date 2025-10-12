@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import type { Jogador } from "../type/index.ts";
+import type { Jogador } from "../../type/index.ts";
 
 export let jogadores: Jogador[] = [];
 let idJogador = 1;

@@ -6,8 +6,11 @@ import {
   atualizarConvite,
   deletarConvite,
 } from "../controllers/conviteController.ts";
+import { verificarTokenFalso } from "../middleware/verificarTokenFalso.ts";
 
 const router = Router();
+
+router.use(verificarTokenFalso);
 
 router.post("/", criarConvite);
 router.get("/", listarConvites);

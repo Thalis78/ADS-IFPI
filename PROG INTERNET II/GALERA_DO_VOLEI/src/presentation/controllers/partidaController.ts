@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import type { Partida } from "../type/index.ts";
+import type { Partida } from "../../type/index.ts";
 
 export let partidas: Partida[] = [];
 let idPartida = 1;

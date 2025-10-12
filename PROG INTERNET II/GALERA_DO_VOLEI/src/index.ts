@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 
-import jogadoresRoutes from "./routes/jogadoresRoutes.ts";
-import partidasRoutes from "./routes/partidasRoutes.ts";
-import convitesRoutes from "./routes/convitesRoutes.ts";
+import jogadoresRoutes from "../src/presentation/routes/jogadoresRoutes.ts";
+import partidasRoutes from "../src/presentation/routes/partidasRoutes.ts";
+import convitesRoutes from "../src/presentation/routes/convitesRoutes.ts";
 
 const app = express();
 app.use(cors());

@@ -6,8 +6,11 @@ import {
   atualizarPartida,
   deletarPartida,
 } from "../controllers/partidaController.ts";
+import { verificarTokenFalso } from "../middleware/verificarTokenFalso.ts";
 
 const router = Router();
+
+router.use(verificarTokenFalso);
 
 router.post("/", criarPartida);
 router.get("/", listarPartidas);

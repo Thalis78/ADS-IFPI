@@ -1,5 +1,5 @@
 import type { Request, Response } from "express";
-import type { Convite } from "../type/index.ts";
+import type { Convite } from "../../type/index.ts";
 
 import { jogadores } from "./jogadorController.ts";
 import { partidas } from "./partidaController.ts";

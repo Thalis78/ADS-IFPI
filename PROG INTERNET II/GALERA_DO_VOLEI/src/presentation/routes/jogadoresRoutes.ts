@@ -6,8 +6,11 @@ import {
   atualizarJogador,
   deletarJogador,
 } from "../controllers/jogadorController.ts";
+import { verificarTokenFalso } from "../middleware/verificarTokenFalso.ts";
 
 const router = Router();
+
+router.use(verificarTokenFalso);
 
 router.post("/", criarJogador);
 router.get("/", listarJogadores);
